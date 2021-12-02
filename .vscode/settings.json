@@ -1,0 +1,8 @@
+{
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.background": "#fff0",
+    "activityBar.background": "#0C3606",
+    "titleBar.activeBackground": "#104B09",
+    "titleBar.activeForeground": "#F3FDF1"
+  }
+}

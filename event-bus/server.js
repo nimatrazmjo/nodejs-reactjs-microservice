@@ -6,3 +6,6 @@ const server = http.createServer(app);
 server.listen(port);
 
 console.log('event bus server is listening on port', port); 
+console.log('Updated event bus');
+console.log('Updated event bus');
+console.log('Updated event bus');

@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-bus-depl
+  name: moderate-depl
 spec:
   replicas: 1
   selector: 
     matchLabels:
-      app: event-bus
+      app: moderate
   template:
     metadata:
       labels:
-        app: event-bus
+        app: moderate
     spec:
       containers:
-        - name: event-bus
-          image: razmjo/event-bus
+        - name: moderate
+          image: razmjo/moderate
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-service
+  name: moderate-service
 spec:
   type: ClusterIP
   selector:
-    app: event-bus
+    app: moderate
   ports:
-    - name: event-bus
+    - name: moderate
       protocol: TCP
-      port: 4005
-      targetPort: 4005
+      port: 4003
+      targetPort: 4003
   

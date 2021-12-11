@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const posts = {};
 const handleEvent = (type, data) => {
-
+   console.log(type);
    if (type === 'PostCreated') {
       const {id, title} = data;
       posts[id] = {id, title, comments: []};
@@ -34,10 +34,10 @@ app.get('/posts', (req, res) => {
 });
 
 app.post('/events',(req, res) => {
-
- const {type, data} = req.body;
-handleEvent(type, data);
- res.send({status: "ok"});
+   const {type, data} = req.body;
+   console.log(type,'Type');
+   handleEvent(type, data);
+   res.send({status: "ok"});
 });
 
 module.exports = { app, handleEvent };
